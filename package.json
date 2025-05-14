@@ -4,7 +4,8 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\""
   },
   "keywords": [],
   "author": {
@@ -17,6 +18,7 @@
     "css-loader": "^7.1.2",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
+    "nodemon": "^3.1.10",
     "style-loader": "^4.0.0",
     "webpack": "^5.99.8",
     "webpack-cli": "^6.0.1",
