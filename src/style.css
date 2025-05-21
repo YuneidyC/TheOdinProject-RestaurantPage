@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
+:root {
+    --green: #006847;
+    --brown: #784141;
+    --red: #CE1127;
+    --yellow: #FFCC00;
+    --white: #FFFFFF;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -11,15 +19,17 @@ body {
     background-color: #211C1C;
     display: flex;
     font-family: "Lora", serif;
+    flex-direction: row;
+    overflow-x: hidden;
 
     header {
-        width: 100%;
+        width: 100vw;
         height: 100px;
         background-color: #191112;
         display: flex;
-        align-self: flex-start;
         justify-content: space-between;
         align-items: center;
+        position: fixed;
 
         img {
             width: 70px;
@@ -39,7 +49,7 @@ body {
             flex-direction: row;
             justify-content: space-evenly;
         }
-        
+
         .links-container > ul > li {
             list-style-type: none;
             font-size: 20px;
@@ -51,6 +61,183 @@ body {
         }
     }
 
+    #main-section {
+        width: 100vw;
+        padding-top: 100px;
+
+        .hero-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .hero-left-side {
+                width: 430px;
+                height: calc(100vh - 150px);
+                font-size: 40px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-shadow: 2px 2px 2px black;
+
+                .c0 {
+                    color: var(--green);
+                }
+
+                .c1,
+                .c2,
+                .c3,
+                .c4,
+                .c6,
+                .c7,
+                .c8,
+                .c9 {
+                    color: var(--brown);
+                }
+
+                .c11,
+                .c12,
+                .c13,
+                .c14 {
+                    color: var(--red);
+                }
+
+                .c16,
+                .c17 {
+                    color: var(--yellow);
+                }
+            }
+
+            .hero-right-side {
+                max-width: 100%;
+                max-height: 500px;
+            }
+        }
+        .our-history-container {
+            width: 100%;
+            height: 100vh;
+            background-color: #3B3A3A;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-bottom: 50px;
+
+            .our-history-left-side {
+                width: 430px;
+                height: 600px;
+                color: var(--white);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .our-history-right-side {
+                width: 600px;
+                height: 450px;
+                user-select: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    object-fit: cover;
+                }
+
+                .items {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 600px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    z-index: 0;
+
+                    .item {
+                        width: 270px;
+                        height: 430px;
+                        overflow: hidden;
+                        opacity: 0;
+                        z-index: -1;
+                        border-radius: 20px;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .active {
+                        width: 270px;
+                        height: 430px;
+                        opacity: 1;
+                        z-index: 99;
+                        transform: translateX(0) scale(1);
+                        position: absolute;
+                    }
+
+                    .prev {
+                        width: 270px;
+                        height: 350px;
+                        opacity: 0.25;
+                        z-index: 2;
+                        transform: translateX(-200px) scale(0.8);
+                        position: absolute;
+                    }
+
+                    .next {
+                        width: 270px;
+                        height: 350px;
+                        opacity: 0.25;
+                        z-index: 2;
+                        transform: translateX(200px) scale(0.8);
+                        position: absolute;
+                    }
+
+                    .button-container {
+                        width: 100%;
+                        z-index: 100;
+                        top: 50%;
+                        position: absolute;
+
+                        button {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            border: none;
+                            background-color: #19111238;
+                        }
+                        
+                        button:first-child {
+                            left: 140px;
+                            position: absolute;
+                        }
+
+                        button > .fa {
+                            width: 100%;
+                            height: 100%;
+                            font-size: 26px;
+                            color: var(--white);
+                        }
+
+                        .button-right {
+                            rotate: 0deg;
+                        }
+
+                        button:last-child {
+                            right: 140px;
+                            position: absolute;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     footer {
         width: 100%;
         height: 50px;
@@ -59,7 +246,7 @@ body {
         align-self: flex-end;
         justify-content: center;
         align-items: center;
-        position: absolute;
+        position: fixed;
 
         p {
             color: white;
