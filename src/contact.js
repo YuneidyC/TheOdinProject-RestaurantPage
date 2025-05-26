@@ -8,8 +8,6 @@ createHoursContainer();
 createPhoneElement();
 
 function createHoursContainer() {
-    const daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
     const text = document.createElement('p');
     hoursContainer.appendChild(text);
     text.classList.add('hour');
@@ -17,28 +15,38 @@ function createHoursContainer() {
     const hourText = document.createTextNode('Hours');
     text.appendChild(hourText);
 
-    createLine(hoursContainer);
+    createLine(text);
+    createOpenDays();
+}
+
+function createOpenDays() {
+    const days = [
+        {day: "Sunday", hour: "11:00AM - 11:30PM"},
+        {day: "Monday", hour: "11:00AM - 11:30PM"},
+        {day: "Tuesday", hour: "11:00AM - 8:30PM"},
+        {day: "Wednesday", hour: "11:00AM - 9:30PM"},
+        {day: "Thursday", hour: "11:00AM - 9:30PM"},
+        {day: "Friday", hour: "11:00AM - 11:30PM"},
+        {day: "Saturday", hour: "11:00AM - 11:30PM"}
+    ];
 
     const d = new Date();
-    let day = daysArr[d.getDay()];
+    let day = days[d.getDay()].day;
 
-    for (let i = 0; i < daysArr.length; i++) {
-        if (i === 2) {
-            i += 2;
-        }
+    for (let i = 0; i < days.length; i++) {
         const openDays = document.createElement('p');
         openDays.classList.add('open-days');
 
         hoursContainer.appendChild(openDays);
 
-        const textDays = document.createTextNode(daysArr[i].substring(0, 3) + ' 11:00am - 11:30pm');
+        const textDays = document.createTextNode(days[i].day.substring(0, 3) + ' ' + days[i].hour);
         openDays.appendChild(textDays);
 
-        if (daysArr[i] === day) {
+        if (days[i].day === day) {
             openDays.className = 'open-days active';
         }
 
-        if (daysArr[i] !== day && openDays.classList.contains('active')) {
+        if (days[i].day !== day && openDays.classList.contains('active')) {
             openDays.classList.remove('active');
         }
     }
@@ -61,6 +69,9 @@ function createPhoneElement() {
 
     createLine(text);
 
+    const phone = document.createElement('p');
+    text.appendChild(phone);
+
     const phoneNumber = document.createTextNode('555-555-5555');
-    hoursContainer.appendChild(phoneNumber);
+    phone.appendChild(phoneNumber);
 }
