@@ -8,7 +8,7 @@
 
     .hours-container {
         width: 480px;
-        height: 423px;
+        height: 475px;
         background-color: #433939d2;
         border-radius: 20px;
         text-align: center;
@@ -23,10 +23,16 @@
 
         .hour,
         .phone {
-            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .hour {
+            height: 50px;
         }
 
         .phone {
+            height: 80px;
+            padding-bottom: 26px;
             margin-top: 25px;
         }
 
