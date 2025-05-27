@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #43393998;
+    background-color: var(--second-color);
     border-radius: 20px;
     z-index: 100;
     box-shadow: 0px 4px 9px 0px rgba(0,0,0,0.79);
@@ -53,7 +53,6 @@
             font-weight: bold;
             text-align: center;
             padding-top: 50px;
-            text-decoration-line: underline;
         }
 
         .taco {
@@ -80,7 +79,6 @@
             font-weight: bold;
             text-align: center;
             padding-top: 50px;
-            text-decoration-line: underline;
             margin: auto auto;
         }
 
@@ -102,7 +100,6 @@
             font-weight: bold;
             text-align: center;
             padding-top: 50px;
-            text-decoration-line: underline;
             margin: auto auto;
         }
 
@@ -132,7 +129,7 @@
     }
 
     ol {
-        padding: 20px;
+        padding: 10px 20px;
     }
 
     li {

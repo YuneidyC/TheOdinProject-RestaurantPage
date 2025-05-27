@@ -10,7 +10,7 @@
     .hours-container {
         width: 480px;
         height: 475px;
-        background-color: #433939d2;
+        background-color: var(--second-color);
         border-radius: 20px;
         text-align: center;
         display: flex;
@@ -61,7 +61,7 @@
         .location-container {
             margin-top: 46px;
             margin-bottom: 27px;
-            
+
             iframe {
                 width: 493px;
                 height: 329px;
@@ -69,7 +69,7 @@
                 margin: 25px auto 37px;
                 display: flex;
             }
-            
+
             .address {
                 text-align: center;
                 font-weight: 400;
