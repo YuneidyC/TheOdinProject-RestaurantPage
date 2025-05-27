@@ -11,9 +11,17 @@ const tacosShrid = './assets/images/tacosShridImg.jpg';
 const tequilaShots = './assets/images/tequilaShotsImg.jpg';
 const tequilaShot = './assets/images/tequilaShotImg.jpg';
 const vegaTacos = './assets/images/vegaTacosImg.jpg';
+const tacos = './assets/images/tacosImg.png';
 const main = document.getElementsByClassName('main')[0];
 
 createHero();
+
+function createLine(parent) {
+    const line = document.createElement('div');
+    parent.appendChild(line);
+
+    line.classList.add('line');
+}
 
 function createHero() {
     const heroContainer = document.createElement('div');
@@ -47,9 +55,11 @@ function createHero() {
 
     button.onclick = function () {
         location.href = './menu.html';
+    }
 
     const heroImage = document.createElement('img');
-    heroImage.src = './assets/tacos-8184634_1920.svg';
+    heroImage.src = tacos;
+    heroImage.loading = 'lazy';
     heroImage.classList.add('hero-right-side');
     heroContainer.appendChild(heroImage);
 
@@ -71,6 +81,8 @@ function createOurHistorySection() {
 
     const titleText = document.createTextNode('Our History');
     title.appendChild(titleText);
+
+    createLine(title);
 
     const textLeftSide = document.createElement('p');
     textLeftSide.classList.add('our-history-text-left-side');
@@ -104,7 +116,6 @@ function createCarousel(element) {
         const item = document.createElement('div');
         element.appendChild(item);
 
-        
         if (i === 0) {
             item.className = 'item active';
         } else if (i === 1) {
@@ -114,8 +125,6 @@ function createCarousel(element) {
         } else {
             item.classList.add('item');
         }
-        console.log(item);
-        
         const image = document.createElement('img');
         image.src = imagesCarousel[i];
         item.appendChild(image);
@@ -141,7 +150,6 @@ function createCarousel(element) {
     iconRight.className = 'fa fa-angle-right';
     buttonRight.appendChild(iconRight);
 
-    const items = document.getElementsByClassName('items')[0];
     const slides = document.querySelectorAll('.item');
     const button = document.querySelectorAll('.button');
 

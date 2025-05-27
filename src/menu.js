@@ -20,6 +20,13 @@ const txtDescription = document.createTextNode(' Asada, carnitas, al pastor, chi
 text.appendChild(txtDescription);
 main.appendChild(menuContainer);
 
+function createLine(parent) {
+    const line = document.createElement('div');
+    parent.appendChild(line);
+
+    line.classList.add('line');
+}
+
 createCardsMenu();
 createRedAndGreenPepper();
 
@@ -29,6 +36,8 @@ function createTitleCardsMenu(parent, text, className) {
     title.classList.add(className);
     parent.appendChild(title);
     title.appendChild(cardTitle);
+
+    createLine(title);
 }
 
 function createImgMenu(parent, src, className) {
