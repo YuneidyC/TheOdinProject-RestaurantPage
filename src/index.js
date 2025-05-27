@@ -39,6 +39,15 @@ function createHero() {
         span.appendChild(char);
     }
 
+    const button = document.createElement('button');
+    heroLeft.appendChild(button);
+
+    const buttonText = document.createTextNode('Check Our Menu');
+    button.appendChild(buttonText);
+
+    button.onclick = function () {
+        location.href = './menu.html';
+
     const heroImage = document.createElement('img');
     heroImage.src = './assets/tacos-8184634_1920.svg';
     heroImage.classList.add('hero-right-side');
