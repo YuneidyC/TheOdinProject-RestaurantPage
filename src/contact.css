@@ -3,8 +3,9 @@
 #main-section {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     color: var(--white);
+    font-size: 24px;
 
     .hours-container {
         width: 480px;
@@ -12,7 +13,6 @@
         background-color: #433939d2;
         border-radius: 20px;
         text-align: center;
-        font-size: 24px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -34,10 +34,46 @@
             height: 80px;
             padding-bottom: 26px;
             margin-top: 25px;
+
+            .phone-number {
+                font-weight: 400;
+            }
         }
 
         .open-days.active {
             font-weight: bold;
+        }
+    }
+
+    .right-side {
+        height: 600px;
+
+        .email-container,
+        .location-container {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .email {
+            font-weight: 400;
+        }
+
+        .location-container {
+            margin-top: 46px;
+            margin-bottom: 27px;
+            
+            iframe {
+                width: 493px;
+                height: 329px;
+                border: 0;
+                margin: 25px auto 37px;
+                display: flex;
+            }
+            
+            .address {
+                text-align: center;
+                font-weight: 400;
+            }
         }
     }
 }
