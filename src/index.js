@@ -61,6 +61,7 @@ function createHero() {
     heroImage.src = tacos;
     heroImage.loading = 'lazy';
     heroImage.classList.add('hero-right-side');
+    heroImage.alt = 'Tacos';
     heroContainer.appendChild(heroImage);
 
     createOurHistorySection();
@@ -108,9 +109,22 @@ function createOurHistorySection() {
     createCarousel(items);
 }
 
-
 function createCarousel(element) {
-    const imagesCarousel = [quesadilla, jarrito, margarita, michelada, nachosCheeseAndMeat, quesadillas, riceAndNachos, rice, salad, tacosShrid, tequilaShot, tequilaShots, vegaTacos];
+    const imagesCarousel = [
+        { photo: quesadilla, alt: 'quesadilla' },
+        { photo: jarrito, alt: 'jarrito' },
+        { photo: margarita, alt: 'margarita' },
+        { photo: michelada, alt: 'michelada' },
+        { photo: nachosCheeseAndMeat, alt: 'nachos cheese and meat' },
+        { photo: quesadillas, alt: 'quesadillas' },
+        { photo: riceAndNachos, alt: 'rice and nachos' },
+        { photo: rice, alt: 'rice' },
+        { photo: salad, alt: 'salad' },
+        { photo: tacosShrid, alt: 'tacos shrid' },
+        { photo: tequilaShot, alt: 'tequila shot' },
+        { photo: tequilaShots, alt: 'three tequila shots' },
+        { photo: vegaTacos, alt: 'vegan tacos'}
+    ];
 
     for (let i = 0; i < imagesCarousel.length; i++) {
         const item = document.createElement('div');
@@ -126,7 +140,8 @@ function createCarousel(element) {
             item.classList.add('item');
         }
         const image = document.createElement('img');
-        image.src = imagesCarousel[i];
+        image.src = imagesCarousel[i].photo;
+        image.alt = imagesCarousel[i].alt;
         item.appendChild(image);
     }
 
@@ -135,12 +150,14 @@ function createCarousel(element) {
     element.appendChild(buttonContainer);
 
     const buttonLeft = document.createElement('button');
-    buttonLeft.classList.add('button');
     buttonContainer.appendChild(buttonLeft);
 
+    buttonLeft.ariaLabel = 'left';
+
     const buttonRight = document.createElement('button');
-    buttonRight.classList.add('button');
     buttonContainer.appendChild(buttonRight);
+
+    buttonLeft.ariaLabel = 'right';
 
     const iconLeft = document.createElement('i');
     iconLeft.className = 'fa fa-angle-left';

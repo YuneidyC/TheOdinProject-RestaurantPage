@@ -45,6 +45,7 @@ function createImgMenu(parent, src, className) {
     img.src = src;
     img.classList.add(className);
     parent.appendChild(img);
+    img.alt = className;
 }
 
 function createCardsMenu() {
@@ -104,10 +105,12 @@ function createRedAndGreenPepper() {
         red.className = 'red-chile red-chile-' + i;
         red.src = redChile;
         main.appendChild(red);
+        red.alt = 'Red hot pepper';
 
         const green = document.createElement('img');
         green.className = 'green-chile green-chile-' + i;
         green.src = greenChile;
         main.appendChild(green);
+        green.alt = 'Green hot pepper';
     }
 }
