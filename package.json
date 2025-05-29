@@ -1,11 +1,14 @@
 {
+  "homepage" : "https://yuneidyc.github.io/TheOdinProject-RestaurantPage/",
   "name": "theodinproject-restaurantpage",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\""
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
+    "deploy": "gh-pages -d dist"
+
   },
   "keywords": [],
   "author": {
