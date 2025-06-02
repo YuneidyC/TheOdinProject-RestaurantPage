@@ -1,8 +1,8 @@
 {
   "homepage" : "https://yuneidyc.github.io/TheOdinProject-RestaurantPage/",
-  "name": "theodinproject-restaurantpage",
+  "name": "TheOdinProject-RestaurantPage",
   "version": "1.0.0",
-  "description": "",
+  "description": "Restaurant page",
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
