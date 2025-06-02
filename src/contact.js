@@ -1,15 +1,15 @@
+import 'Styles/contact.css';
+import { createLine } from './script';
+
 const main = document.getElementsByClassName('main')[0];
 
-const mapLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39826.70790028981!2d-117.31939784489046!3d33.970645964820605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcae52901f5181%3A0x9f101fc8132139c5!2sRiverside%2C%20CA%2092507%2C%20USA!5e1!3m2!1sen!2sie!4v1748353615219!5m2!1sen!2sie";
-
-const hoursContainer = document.createElement('div');
-main.appendChild(hoursContainer);
-hoursContainer.classList.add('hours-container');
-
 createHoursContainer();
-createPhoneElement();
 
 function createHoursContainer() {
+    const hoursContainer = document.createElement('div');
+    main.appendChild(hoursContainer);
+    hoursContainer.classList.add('hours-container');
+
     const text = document.createElement('p');
     hoursContainer.appendChild(text);
     text.classList.add('hour');
@@ -18,10 +18,11 @@ function createHoursContainer() {
     text.appendChild(hourText);
 
     createLine(text);
-    createOpenDays();
+    createOpenDays(hoursContainer);
+    createPhoneElement(hoursContainer);
 }
 
-function createOpenDays() {
+function createOpenDays(parent) {
     const days = [
         { day: "Sunday", hour: "11:00AM - 11:30PM" },
         { day: "Monday", hour: "11:00AM - 11:30PM" },
@@ -39,7 +40,7 @@ function createOpenDays() {
         const openDays = document.createElement('p');
         openDays.classList.add('open-days');
 
-        hoursContainer.appendChild(openDays);
+        parent.appendChild(openDays);
 
         const textDays = document.createTextNode(days[i].day.substring(0, 3) + ' ' + days[i].hour);
         openDays.appendChild(textDays);
@@ -54,16 +55,9 @@ function createOpenDays() {
     }
 }
 
-function createLine(parent) {
-    const line = document.createElement('div');
-    parent.appendChild(line);
-
-    line.classList.add('line');
-}
-
-function createPhoneElement() {
+function createPhoneElement(parent) {
     const text = document.createElement('p');
-    hoursContainer.appendChild(text);
+    parent.appendChild(text);
     text.classList.add('phone');
 
     const phoneText = document.createTextNode('Phone');
@@ -106,6 +100,7 @@ function createRightSide() {
 }
 
 function createLocationContainer(parent) {
+    const mapLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39826.70790028981!2d-117.31939784489046!3d33.970645964820605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcae52901f5181%3A0x9f101fc8132139c5!2sRiverside%2C%20CA%2092507%2C%20USA!5e1!3m2!1sen!2sie!4v1748353615219!5m2!1sen!2sie";
     const locationElement = document.createElement('div');
     locationElement.classList.add('location-container');
     parent.appendChild(locationElement);

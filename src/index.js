@@ -1,27 +1,24 @@
-const quesadilla = './assets/images/quesadillaImg.jpg';
-const jarrito = './assets/images/jarritoImg.jpg';
-const margarita = './assets/images/margaritaImg.jpg';
-const michelada = './assets/images/micheladaImg.jpg';
-const nachosCheeseAndMeat = './assets/images/nachosCheeseAndMeatImg.jpg'
-const quesadillas = './assets/images/quesadillasImg.jpg';
-const riceAndNachos = './assets/images/riceAndNachosImg.jpg';
-const rice = './assets/images/riceImg.jpg';
-const salad = './assets/images/saladImg.jpg';
-const tacosShrid = './assets/images/tacosShridImg.jpg';
-const tequilaShots = './assets/images/tequilaShotsImg.jpg';
-const tequilaShot = './assets/images/tequilaShotImg.jpg';
-const vegaTacos = './assets/images/vegaTacosImg.jpg';
-const tacos = './assets/images/tacosImg.png';
+import 'Styles/style.css';
+import { createLine } from './script';
+
+import quesadilla from 'Images/quesadillaImg.jpg';
+import jarrito from 'Images/jarritoImg.jpg';
+import margarita from 'Images/margaritaImg.jpg';
+import michelada from 'Images/micheladaImg.jpg';
+import nachosCheeseAndMeat from 'Images/nachosCheeseAndMeatImg.jpg'
+import quesadillas from 'Images/quesadillasImg.jpg';
+import riceAndNachos from 'Images/riceAndNachosImg.jpg';
+import rice from 'Images/riceImg.jpg';
+import salad from 'Images/saladImg.jpg';
+import tacosShrid from 'Images/tacosShridImg.jpg';
+import tequilaShots from 'Images/tequilaShotsImg.jpg';
+import tequilaShot from 'Images/tequilaShotImg.jpg';
+import vegaTacos from 'Images/vegaTacosImg.jpg';
+import tacos from 'Images/tacosImg.png';
+
 const main = document.getElementsByClassName('main')[0];
 
 createHero();
-
-function createLine(parent) {
-    const line = document.createElement('div');
-    parent.appendChild(line);
-
-    line.classList.add('line');
-}
 
 function createHero() {
     const heroContainer = document.createElement('div');
@@ -150,14 +147,16 @@ function createCarousel(element) {
     element.appendChild(buttonContainer);
 
     const buttonLeft = document.createElement('button');
+    buttonLeft.classList.add('button');
     buttonContainer.appendChild(buttonLeft);
 
     buttonLeft.ariaLabel = 'left';
 
     const buttonRight = document.createElement('button');
+    buttonRight.classList.add('button');
     buttonContainer.appendChild(buttonRight);
 
-    buttonLeft.ariaLabel = 'right';
+    buttonRight.ariaLabel = 'right';
 
     const iconLeft = document.createElement('i');
     iconLeft.className = 'fa fa-angle-left';

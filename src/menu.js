@@ -1,11 +1,14 @@
 import { desserts, drinks, menuTacos, others, quesadillas } from './menuList.js';
+import { createLine } from './script';
 
-const taco = './assets/images/tacoImg.png';
-const rice = './assets/images/riceImg.png';
-const cookie = './assets/images/cookieImg.png';
-const tequila = './assets/images/tequilaImg.png';
-const redChile = './assets/images/redChileImg.png';
-const greenChile = './assets/images/greenChileImg.png';
+import 'Styles/menu.css';
+
+import taco from 'Images/tacoImg.png';
+import rice from 'Images/riceImg.png';
+import cookie from 'Images/cookieImg.png';
+import tequila from 'Images/tequilaImg.png';
+import redChile from 'Images/redChileImg.png';
+import greenChile from 'Images/greenChileImg.png';
 
 const main = document.getElementsByClassName('main')[0];
 
@@ -19,13 +22,6 @@ menuContainer.appendChild(text);
 const txtDescription = document.createTextNode(' Asada, carnitas, al pastor, chicken, ground beef and chicarron.');
 text.appendChild(txtDescription);
 main.appendChild(menuContainer);
-
-function createLine(parent) {
-    const line = document.createElement('div');
-    parent.appendChild(line);
-
-    line.classList.add('line');
-}
 
 createCardsMenu();
 createRedAndGreenPepper();
