@@ -9,6 +9,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
+    resolve: {
+        alias: {
+            Images: path.resolve(__dirname, './src/assets/images/'),
+            Styles: path.resolve(__dirname, './src/assets/css/'),
+        }
+    },
     devtool: "eval-source-map",
     devServer: {
         open: true,
