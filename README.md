@@ -13,6 +13,8 @@ This is the solution to the [Restaurant page](https://www.theodinproject.com/les
 
 ## Lighthouse
 
+<img src="lighthouse_results/desktop/pagespeed.svg" alt="Lighthouse report" width=800 />
+
 ## Tech stack
 
 <!-- markdownlint-disable MD033 -->
