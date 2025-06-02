@@ -3,9 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        menu: './src/menu.js',
+        contact: './src/contact.js',
+    },
     output: {
-        filename: '[name].js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true
     },
@@ -17,18 +21,28 @@ module.exports = {
     },
     devtool: "eval-source-map",
     devServer: {
-        open: true,
         static: {
-            directory: path.join(__dirname, 'src'),
+            directory: path.join(__dirname, 'dist'),
         },
+        server: 'http',
         compress: true,
         port: 8080,
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: './src/index.html',
-            template: './src/index.html',
-            chunks: ['main']
+            filename: 'index.html',
+            template: 'src/index.html',
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'menu.html',
+            template: 'src/menu.html',
+            chunks: ['menu']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contact.html',
+            template: 'src/contact.html',
+            chunks: ['contact']
         }),
     ],
     module: {
